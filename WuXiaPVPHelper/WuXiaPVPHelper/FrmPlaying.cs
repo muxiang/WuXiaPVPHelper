@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AlphaWindowBase.Window.WindowBase;
 
 namespace WuXiaPVPHelper
 {
-    public partial class Form1 : Form
+    public partial class FrmPlaying : AlphaWindow
     {
-        public Form1()
+        public FrmPlaying()
         {
             InitializeComponent();
+            Penetrable = true;
         }
     }
 }

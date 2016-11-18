@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,16 +47,45 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowBase">
+      <HintPath>References\WindowBase.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Career.cs" />
+    <Compile Include="CareerCollection.cs" />
+    <Compile Include="Careers\天香\玉帘拂衣.cs" />
+    <Compile Include="Careers\天香\伞舞盾.cs" />
+    <Compile Include="Careers\天香\柳暗凌波.cs" />
+    <Compile Include="Careers\天香\琴心三叠.cs" />
+    <Compile Include="Careers\太白\烟霞满天.cs" />
+    <Compile Include="Careers\太白\燕回朝阳.cs" />
+    <Compile Include="Careers\太白\天峰五云剑.cs" />
+    <Compile Include="Careers\太白\无痕剑意.cs" />
+    <Compile Include="Careers\神威\云龙五现.cs" />
+    <Compile Include="Careers\神威\无敌无我.cs" />
+    <Compile Include="Careers\神威\背水一击.cs" />
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlaying.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlaying.Designer.cs">
+      <DependentUpon>FrmPlaying.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skill.cs" />
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlaying.resx">
+      <DependentUpon>FrmPlaying.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,6 +108,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="1.ico" />
+    <Content Include="Datum.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Icons\云龙五现.png" />
+    <Content Include="Icons\伞舞盾.png" />
+    <Content Include="Icons\天峰五云剑.png" />
+    <Content Include="Icons\无敌无我.png" />
+    <Content Include="Icons\无痕剑意.png" />
+    <Content Include="Icons\柳暗凌波.png" />
+    <Content Include="Icons\烟霞满天.png" />
+    <Content Include="Icons\燕回朝阳.png" />
+    <Content Include="Icons\玉帘拂衣.png" />
+    <Content Include="Icons\琴心三叠.png" />
+    <Content Include="Icons\背水一击.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
