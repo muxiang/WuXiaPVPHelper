@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -20,7 +21,7 @@ namespace WuXiaPVPHelper
         /// <summary>
         /// 名称
         /// </summary>
-        public string Name { get;protected set; }
+        public string Name { get; protected set; }
 
         /// <summary>
         /// 冷却时间
@@ -72,6 +73,12 @@ namespace WuXiaPVPHelper
         {
             _sw.Stop();
             _sw = null;
+        }
+
+        public static Skill CreateByName(string name)
+        {
+            ConstructorInfo ctorInfo = Assembly.GetExecutingAssembly().GetExportedTypes().FirstOrDefault(t => t.Name == name).GetConstructor(new Type[] { });
+            return ctorInfo?.Invoke(null) as Skill;
         }
     }
 }

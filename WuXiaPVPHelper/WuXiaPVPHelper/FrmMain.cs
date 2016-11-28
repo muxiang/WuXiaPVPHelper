@@ -27,6 +27,11 @@ namespace WuXiaPVPHelper
             InitializeComponent();
         }
 
+        public ImageList ImageList1
+        {
+            get { return _imageList; }
+        }
+
         private void FrmMain_Load(object sender, EventArgs e)
         {
             _careers = new List<Career>
@@ -49,7 +54,8 @@ namespace WuXiaPVPHelper
                     {
                         new 背水一击(),
                         new 无敌无我(),
-                        new 云龙五现()
+                        new 云龙五现(),
+                        new 猛虎破()
                     }
                 },
                 new Career
@@ -72,7 +78,7 @@ namespace WuXiaPVPHelper
 
             string[] iconNames = Directory.GetFiles("Icons");
             foreach (string i in iconNames)
-                _imageList.Images.Add(i.Substring(i.IndexOf("Icons\\") + "Icons\\".Length, i.Length - ".png".Length - "Icons\\".Length), Image.FromFile(i));
+                _imageList.Images.Add(i.Substring(i.IndexOf("Icons\\", StringComparison.Ordinal) + "Icons\\".Length, i.Length - ".png".Length - "Icons\\".Length), Image.FromFile(i));
 
             listView1.LargeImageList = _imageList;
         }
@@ -91,6 +97,77 @@ namespace WuXiaPVPHelper
             }
 
             listView1.Show();
+        }
+
+        private void listView1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0) return;
+
+            if (e.KeyValue < 112 || e.KeyValue >= 112 + listView1.Items.Count) return;
+
+            ListViewItem itemTarget = listView1.Items.OfType<ListViewItem>().FirstOrDefault(i => i.Text.Contains(e.KeyCode.ToString()));
+            if (itemTarget == null) return;
+            ListViewItem itemSelect = listView1.SelectedItems[0];
+
+            SwapItems(itemTarget, itemSelect);
+
+            itemTarget.Selected = true;
+        }
+
+        private void SwapItems(ListViewItem a, ListViewItem b)
+        {
+            ListViewItem temp = new ListViewItem();
+            temp.Text = a.Text;
+            temp.ImageKey = a.ImageKey;
+            a.Text = b.Text;
+            a.ImageKey = b.ImageKey;
+            b.Text = temp.Text;
+            b.ImageKey = temp.ImageKey;
+
+            string aName, aKey, bName, bKey;
+            GetSkillNameAndKey(a.Text, out aName, out aKey);
+            GetSkillNameAndKey(b.Text, out bName, out bKey);
+
+            a.Text = aName + '\n' + bKey;
+            b.Text = bName + '\n' + aKey;
+        }
+
+        private void GetSkillNameAndKey(string skillFullName, out string name, out string key)
+        {
+            string[] result = skillFullName.Split('\n');
+            name = result[0];
+            key = result[1];
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            if (cmbCareers.SelectedIndex < 0)
+            {
+                MessageBox.Show(@"请先选择对战职业!", @"错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show(@"即将关闭配置窗口，按F12呼出!", @"提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Hide();
+            string[] skillNames =
+            listView1.Items.OfType<ListViewItem>().Select(i =>
+            {
+                string name, key;
+                GetSkillNameAndKey(i.Text, out name, out key);
+                return name;
+            }).ToArray();
+
+            Skill[] skills = new Skill[skillNames.Length];
+            for (int i = 0; i < skills.Length; i++)
+                skills[i] = Skill.CreateByName(skillNames[i]);
+
+            FrmPlaying frmPlaying = new FrmPlaying(skills, this);
+            frmPlaying.Show();
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

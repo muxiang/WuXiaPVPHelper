@@ -64,6 +64,7 @@
     <Compile Include="Careers\太白\无痕剑意.cs" />
     <Compile Include="Careers\神威\云龙五现.cs" />
     <Compile Include="Careers\神威\无敌无我.cs" />
+    <Compile Include="Careers\神威\猛虎破.cs" />
     <Compile Include="Careers\神威\背水一击.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -80,6 +81,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skill.cs" />
+    <Compile Include="VirtualKeyStates.cs" />
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +124,7 @@
     <Content Include="Icons\柳暗凌波.png" />
     <Content Include="Icons\烟霞满天.png" />
     <Content Include="Icons\燕回朝阳.png" />
+    <Content Include="Icons\猛虎破.png" />
     <Content Include="Icons\玉帘拂衣.png" />
     <Content Include="Icons\琴心三叠.png" />
     <Content Include="Icons\背水一击.png" />
