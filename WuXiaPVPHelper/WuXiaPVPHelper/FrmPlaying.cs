@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -16,6 +17,7 @@ namespace WuXiaPVPHelper
         private int _yPadding;
         private readonly FrmMain _frmMain;
         private readonly Skill[] _skills;
+        private Font _font = new Font("宋体", 60, FontStyle.Bold, GraphicsUnit.Pixel);
 
         [DllImport("USER32.dll")]
         static extern short GetKeyState(VirtualKeyStates nVirtKey);
@@ -70,17 +72,26 @@ namespace WuXiaPVPHelper
             {
                 for (int i = 0; i < _skills.Length; i++)
                 {
-                    if (_skills[i].IsEnable) continue;
-
-                    int num = _skills[i].CooldownRemains;
-
                     var i1 = i;
                     var pic = Controls.OfType<PictureBox>().FirstOrDefault(p => ((Skill)p.Tag).Name == _skills[i1].Name);
-                    
+
+                    if (_skills[i].IsEnable)
+                    {
+                        pic?.Refresh();
+                        continue;
+                    }
+
+                    int cdRemains = _skills[i].CooldownRemains;
+                    double cdPercent = _skills[i].CooldownPercent;
+
                     using (Graphics g = pic.CreateGraphics())
                     {
                         pic.Refresh();
-                        g.DrawString(num.ToString(), new Font("宋体", 48), Brushes.Gold, new PointF(0,0));
+
+                        SizeF sz = g.MeasureString(cdRemains.ToString(), _font);
+                        PointF drawPt = new PointF(Math.Abs(pic.Width / 2f - sz.Width / 2), Math.Abs(pic.Height / 2f - sz.Height / 2));
+                        g.FillPie(new SolidBrush(Color.FromArgb(127, Color.Black)), new Rectangle(-pic.Width / 2, -pic.Height / 2, pic.Width * 2, pic.Height * 2), -90 + 360 * (float)(1-cdPercent), 360 * (float)cdPercent);
+                        g.DrawString(cdRemains.ToString(), _font, Brushes.Gold, drawPt);
                     }
                 }
             };

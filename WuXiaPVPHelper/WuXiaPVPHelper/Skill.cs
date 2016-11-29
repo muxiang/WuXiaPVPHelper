@@ -37,6 +37,14 @@ namespace WuXiaPVPHelper
         }
 
         /// <summary>
+        /// 冷却时间百分比(double)
+        /// </summary>
+        public virtual double CooldownPercent
+        {
+            get { return (double)CooldownRemains/Cooldown; }
+        }
+
+        /// <summary>
         /// 是否可用
         /// </summary>
         public bool IsEnable
@@ -55,6 +63,8 @@ namespace WuXiaPVPHelper
         {
             if (raw <= lo) return lo;
             if (raw >= hi) return hi;
+
+            if (raw == 1) ;
             return raw;
         }
 

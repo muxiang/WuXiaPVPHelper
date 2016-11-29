@@ -87,7 +87,7 @@ namespace WuXiaPVPHelper.Careers.天香
 
         public override void Reset()
         {
-            _sw2.Stop();
+            _sw2?.Stop();
             _sw2 = null;
             base.Reset();
         }
