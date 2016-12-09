@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,12 +27,8 @@ namespace WuXiaPVPHelper.Careers.天香
         {
             get
             {
-                if (_sw == null)
-                {
-                    if (_sw2 != null)
-                        return true;
-                }
-                return false;
+                if (Sw != null) return false;
+                return _sw2 != null;
             }
         }
 
@@ -42,13 +39,13 @@ namespace WuXiaPVPHelper.Careers.天香
         {
             get
             {
-                if (_sw == null)
+                if (Sw == null)
                 {
                     if (_sw2 == null)
                         return 0;
 
                     if ((int)_sw2.ElapsedMilliseconds / 1000 < FirstStageCooldown)
-                        return (int)_sw2.ElapsedMilliseconds / 1000;
+                        return FirstStageCooldown - (int)_sw2.ElapsedMilliseconds / 1000;
 
                     //自然结束一段计时,未释放二段
                     _sw2.Stop();
@@ -57,8 +54,8 @@ namespace WuXiaPVPHelper.Careers.天香
                     Cooldown -= FirstStageCooldown;
                     base.Cast();
                 }
-                Debug.Assert(_sw != null, "_sw != null");
-                int remain = Cooldown - (int)_sw.ElapsedMilliseconds / 1000;
+                Debug.Assert(Sw != null, "Sw != null");
+                int remain = Cooldown - (int)Sw.ElapsedMilliseconds / 1000;
                 if (remain <= 0)
                 {
                     Cooldown += FirstStageCooldown;
@@ -67,10 +64,12 @@ namespace WuXiaPVPHelper.Careers.天香
                 return remain;
             }
         }
+
         public 柳暗凌波()
         {
             Name = "柳暗凌波";
             Cooldown = 30;
+            FirstStageCooldown = 10;
         }
 
         public override void Cast()
@@ -90,6 +89,12 @@ namespace WuXiaPVPHelper.Careers.天香
             _sw2?.Stop();
             _sw2 = null;
             base.Reset();
+        }
+
+        public override void Draw(Graphics g, Size rectSz)
+        {
+            //if(IsFirstStage)
+            base.Draw(g, rectSz);
         }
     }
 }

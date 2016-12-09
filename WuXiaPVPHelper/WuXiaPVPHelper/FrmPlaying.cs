@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using AlphaWindowBase.Window.WindowBase;
@@ -17,7 +18,6 @@ namespace WuXiaPVPHelper
         private int _yPadding;
         private readonly FrmMain _frmMain;
         private readonly Skill[] _skills;
-        private Font _font = new Font("宋体", 60, FontStyle.Bold, GraphicsUnit.Pixel);
 
         [DllImport("USER32.dll")]
         static extern short GetKeyState(VirtualKeyStates nVirtKey);
@@ -33,7 +33,7 @@ namespace WuXiaPVPHelper
             {
                 if (i == 0)
                 {
-                    pic1.Image = _frmMain.ImageList1.Images[_skills[0].Name];
+                    //pic1.Image = _frmMain.ImageList1.Images[_skills[0].Name];
                     pic1.Tag = _skills[0];
                     continue;
                 }
@@ -46,7 +46,7 @@ namespace WuXiaPVPHelper
                     SizeMode = pic1.SizeMode,
                     TabIndex = pic1.TabIndex,
                     TabStop = pic1.TabStop,
-                    Image = _frmMain.ImageList1.Images[_skills[i].Name],
+                    //Image = _frmMain.ImageList1.Images[_skills[i].Name],
                     Tag = _skills[i]
                 };
 
@@ -58,12 +58,14 @@ namespace WuXiaPVPHelper
                 for (int i = 0; i < _skills.Length; i++)
                 {
                     short s = GetKeyState(VirtualKeyStates.VK_F1 + i);
-                    if (s < 0)
-                    {
-                        if (_skills[i].IsEnable)
-                            _skills[i].Cast();
-                    }
+                    if (s >= 0) continue;
+                    if (_skills[i].IsEnable)
+                        _skills[i].Cast();
                 }
+
+                short sF12 = GetKeyState(VirtualKeyStates.VK_F12);
+                if (sF12 >= 0) return;
+                Close();
             };
 
             tmrGetKeyState.Start();
@@ -75,23 +77,16 @@ namespace WuXiaPVPHelper
                     var i1 = i;
                     var pic = Controls.OfType<PictureBox>().FirstOrDefault(p => ((Skill)p.Tag).Name == _skills[i1].Name);
 
-                    if (_skills[i].IsEnable)
-                    {
-                        pic?.Refresh();
-                        continue;
-                    }
+                    if (pic == null) continue;
 
-                    int cdRemains = _skills[i].CooldownRemains;
-                    double cdPercent = _skills[i].CooldownPercent;
+                    //pic.Refresh();
+
+                    //if (_skills[i].IsEnable)
+                    //    continue;
 
                     using (Graphics g = pic.CreateGraphics())
                     {
-                        pic.Refresh();
-
-                        SizeF sz = g.MeasureString(cdRemains.ToString(), _font);
-                        PointF drawPt = new PointF(Math.Abs(pic.Width / 2f - sz.Width / 2), Math.Abs(pic.Height / 2f - sz.Height / 2));
-                        g.FillPie(new SolidBrush(Color.FromArgb(127, Color.Black)), new Rectangle(-pic.Width / 2, -pic.Height / 2, pic.Width * 2, pic.Height * 2), -90 + 360 * (float)(1-cdPercent), 360 * (float)cdPercent);
-                        g.DrawString(cdRemains.ToString(), _font, Brushes.Gold, drawPt);
+                        _skills[i].Draw(g, pic.Size);
                     }
                 }
             };
@@ -101,9 +96,9 @@ namespace WuXiaPVPHelper
 
         private void pic1_MouseDown(object sender, MouseEventArgs e)
         {
-            _mouseDown = true;
             _xPadding = e.X + pic1.Location.X;
             _yPadding = e.Y + pic1.Location.Y;
+            _mouseDown = true;
         }
 
         private void pic1_MouseUp(object sender, MouseEventArgs e)
@@ -123,6 +118,7 @@ namespace WuXiaPVPHelper
         private void FrmPlaying_FormClosed(object sender, FormClosedEventArgs e)
         {
             _frmMain.Show();
+            _frmMain.Activate();
         }
     }
 }

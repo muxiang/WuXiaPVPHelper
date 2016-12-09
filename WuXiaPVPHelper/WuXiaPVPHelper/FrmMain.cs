@@ -26,12 +26,7 @@ namespace WuXiaPVPHelper
         {
             InitializeComponent();
         }
-
-        public ImageList ImageList1
-        {
-            get { return _imageList; }
-        }
-
+        
         private void FrmMain_Load(object sender, EventArgs e)
         {
             _careers = new List<Career>
@@ -143,11 +138,11 @@ namespace WuXiaPVPHelper
         {
             if (cmbCareers.SelectedIndex < 0)
             {
-                MessageBox.Show(@"请先选择对战职业!", @"错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"请先选择对战职业！", @"错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            MessageBox.Show(@"即将关闭配置窗口，按F12呼出!", @"提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"即将关闭配置窗口，按F12呼出！\n拖动第一个图标可以调整窗口位置", @"提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Hide();
             string[] skillNames =
             listView1.Items.OfType<ListViewItem>().Select(i =>
