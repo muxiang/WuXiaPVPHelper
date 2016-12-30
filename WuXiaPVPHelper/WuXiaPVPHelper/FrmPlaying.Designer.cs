@@ -49,7 +49,7 @@
             // 
             // tmrDraw
             // 
-            this.tmrDraw.Interval = 1000;
+            this.tmrDraw.Interval = 100;
             // 
             // FrmPlaying
             // 

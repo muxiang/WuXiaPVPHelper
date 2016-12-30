@@ -65,6 +65,19 @@ namespace WuXiaPVPHelper.Careers.天香
             }
         }
 
+        public override double CooldownPercent
+        {
+            get { return (double)CooldownRemains / (IsFirstStage ? FirstStageCooldown : Cooldown); }
+        }
+
+        public override bool IsEnable
+        {
+            get
+            {
+                return IsFirstStage || base.IsEnable;
+            }
+        }
+
         public 柳暗凌波()
         {
             Name = "柳暗凌波";
@@ -93,7 +106,26 @@ namespace WuXiaPVPHelper.Careers.天香
 
         public override void Draw(Graphics g, Size rectSz)
         {
-            //if(IsFirstStage)
+            if (IsFirstStage)
+            {
+                g.DrawImage(Image.FromFile($"Icons\\{Name}1.png"), new RectangleF(new PointF(0, 0), rectSz));
+
+                int cdRemains = CooldownRemains;
+                double cdPercent = CooldownPercent;
+
+                SizeF sz = g.MeasureString(cdRemains.ToString(), DrawFont);
+                PointF drawPt = new PointF(Math.Abs(rectSz.Width / 2f - sz.Width / 2), Math.Abs(rectSz.Height / 2f - sz.Height / 2));
+                g.FillPie(new SolidBrush(Color.FromArgb(127, Color.Black)),
+                    new Rectangle(-rectSz.Width / 2, -rectSz.Height / 2, rectSz.Width * 2, rectSz.Height * 2),
+                    -90 + 360 * (float)(1 - cdPercent),
+                    360 * (float)cdPercent);
+
+                g.DrawString(cdRemains.ToString(), DrawFont, Brushes.Gold, drawPt);
+                g.DrawRectangle(new Pen(Color.White, 6f), new Rectangle(0, 0, rectSz.Width - 3, rectSz.Height - 3));
+
+                return;
+            }
+
             base.Draw(g, rectSz);
         }
     }

@@ -19,6 +19,8 @@ namespace WuXiaPVPHelper
         private readonly FrmMain _frmMain;
         private readonly Skill[] _skills;
 
+        private int _getKeyStateDelay = 0;
+
         [DllImport("USER32.dll")]
         static extern short GetKeyState(VirtualKeyStates nVirtKey);
 
@@ -55,13 +57,21 @@ namespace WuXiaPVPHelper
 
             tmrGetKeyState.Tick += (s1, e1) =>
             {
-                for (int i = 0; i < _skills.Length; i++)
+                if (_getKeyStateDelay <= 0)
                 {
-                    short s = GetKeyState(VirtualKeyStates.VK_F1 + i);
-                    if (s >= 0) continue;
-                    if (_skills[i].IsEnable)
-                        _skills[i].Cast();
+                    for (int i = 0; i < _skills.Length; i++)
+                    {
+                        short s = GetKeyState(VirtualKeyStates.VK_F1 + i);
+                        if (s >= 0) continue;
+                        if (_skills[i].IsEnable)
+                        {
+                            _skills[i].Cast();
+                            _getKeyStateDelay = 10;
+                        }
+                    }
                 }
+
+                --_getKeyStateDelay;
 
                 short sF12 = GetKeyState(VirtualKeyStates.VK_F12);
                 if (sF12 >= 0) return;
