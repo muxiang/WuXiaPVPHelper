@@ -53,7 +53,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Career.cs" />
-    <Compile Include="CareerCollection.cs" />
+    <Compile Include="Careers\丐帮\倒提壶.cs" />
+    <Compile Include="Careers\丐帮\离弦腿解控.cs" />
+    <Compile Include="Careers\丐帮\离弦腿.cs" />
+    <Compile Include="Careers\丐帮\龙吟三破.cs" />
+    <Compile Include="Careers\丐帮\醉饮江河.cs" />
+    <Compile Include="Careers\五毒\索命诀.cs" />
+    <Compile Include="Careers\五毒\百鬼夜行.cs" />
+    <Compile Include="Careers\五毒\凤凰绝杀.cs" />
+    <Compile Include="Careers\五毒\寄生诀.cs" />
+    <Compile Include="Careers\五毒\蝙蝠掠夜.cs" />
+    <Compile Include="Careers\唐门\困百骸.cs" />
+    <Compile Include="Careers\唐门\形神合.cs" />
+    <Compile Include="Careers\唐门\千机扫.cs" />
+    <Compile Include="Careers\唐门\自替身.cs" />
     <Compile Include="Careers\天香\玉帘拂衣.cs" />
     <Compile Include="Careers\天香\伞舞盾.cs" />
     <Compile Include="Careers\天香\柳暗凌波.cs" />
@@ -62,6 +75,14 @@
     <Compile Include="Careers\太白\燕回朝阳.cs" />
     <Compile Include="Careers\太白\天峰五云剑.cs" />
     <Compile Include="Careers\太白\无痕剑意.cs" />
+    <Compile Include="Careers\真武\微明生灭.cs" />
+    <Compile Include="Careers\真武\冲盈.cs" />
+    <Compile Include="Careers\真武\离渊.cs" />
+    <Compile Include="Careers\真武\动愈守中.cs" />
+    <Compile Include="Careers\神刀\斩血海.cs" />
+    <Compile Include="Careers\神刀\回锋斩.cs" />
+    <Compile Include="Careers\神刀\啄星辰.cs" />
+    <Compile Include="Careers\神刀\饮沧海.cs" />
     <Compile Include="Careers\神威\云龙五现.cs" />
     <Compile Include="Careers\神威\无敌无我.cs" />
     <Compile Include="Careers\神威\猛虎破.cs" />
@@ -112,10 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.ico" />
-    <Content Include="Datum.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Icons\云龙五现.png" />
     <Content Include="Icons\伞舞盾.png" />
     <Content Include="Icons\天峰五云剑.png" />

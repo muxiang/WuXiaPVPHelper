@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace WuXiaPVPHelper.Careers.天香
+namespace WuXiaPVPHelper.Careers.五毒
 {
     [Serializable]
-    public class 柳暗凌波 : Skill
+    public class 蝙蝠掠夜 : Skill
     {
         //一段冷却计时秒表
         [NonSerialized]
@@ -52,8 +52,7 @@ namespace WuXiaPVPHelper.Careers.天香
                     //自然结束一段计时,未释放二段
                     _sw2.Stop();
                     _sw2 = null;
-                    //扣除冷却时间
-                    Cooldown -= FirstStageCooldown;
+
                     base.Cast();
                 }
 
@@ -82,11 +81,11 @@ namespace WuXiaPVPHelper.Careers.天香
             }
         }
 
-        public 柳暗凌波()
+        public 蝙蝠掠夜()
         {
-            Name = "柳暗凌波";
-            Cooldown = 30;
-            FirstStageCooldown = 10;
+            Name = "蝙蝠掠夜";
+            Cooldown = 23;
+            FirstStageCooldown = 15;
         }
 
         public override void Cast()
@@ -112,7 +111,7 @@ namespace WuXiaPVPHelper.Careers.天香
         {
             if (IsFirstStage)
             {
-                g.DrawImage(Image.FromFile($"Icons\\{Name}1.png"), new RectangleF(new PointF(0, 0), rectSz));
+                g.DrawImage(Image.FromFile($"Icons\\{Name}.png"), new RectangleF(new PointF(0, 0), rectSz));
 
                 int cdRemains = CooldownRemains;
                 double cdPercent = CooldownPercent;
@@ -124,8 +123,9 @@ namespace WuXiaPVPHelper.Careers.天香
                     -90 + 360 * (float)(1 - cdPercent),
                     360 * (float)cdPercent);
 
+
                 g.DrawString(cdRemains.ToString(), DrawFont, Brushes.Gold, drawPt);
-                
+
                 //渐变白边
                 GraphicsPath path = new GraphicsPath();
                 path.AddEllipse(-rectSz.Width / 2, -rectSz.Height / 2, rectSz.Width * 2, rectSz.Height * 2);
@@ -133,10 +133,10 @@ namespace WuXiaPVPHelper.Careers.天香
 
                 PathGradientBrush brush = new PathGradientBrush(path);
                 brush.CenterColor = Color.FromArgb(10, 255, 255, 255);
-                brush.SurroundColors = new Color[] { Color.FromArgb(220, 255, 255, 255) };
+                brush.SurroundColors = new Color[] { Color.FromArgb(230, 255, 255, 255) };
 
                 g.FillPath(brush, path);
-                
+
                 g.DrawRectangle(new Pen(Color.Black, 2f), new Rectangle(0, 0, rectSz.Width - 2, rectSz.Height - 2));
 
                 return;

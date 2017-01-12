@@ -8,6 +8,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using AlphaWindowBase.Window.WindowBase;
+using WuXiaPVPHelper.Careers.神威;
 
 namespace WuXiaPVPHelper
 {
@@ -20,6 +21,9 @@ namespace WuXiaPVPHelper
         private readonly Skill[] _skills;
 
         private int _getKeyStateDelay = 0;
+
+        //背水中
+        private bool _duringBeiShui = false;
 
         [DllImport("USER32.dll")]
         static extern short GetKeyState(VirtualKeyStates nVirtKey);
@@ -65,8 +69,50 @@ namespace WuXiaPVPHelper
                         if (s >= 0) continue;
                         if (_skills[i].IsEnable)
                         {
+                            #region 神威
+
+                            if (_skills[i].GetType().Namespace.Contains("神威"))
+                            {
+                                switch (_skills[i].Name)
+                                {
+                                    case "背水一击":
+                                        _duringBeiShui = true;
+                                        _skills[i].Cast();
+                                        break;
+                                    case "猛虎破":
+                                        ((猛虎破)_skills[i]).Cast(_duringBeiShui);
+                                        break;
+                                    case "无敌无我":
+                                        ((无敌无我)_skills[i]).Cast(_duringBeiShui);
+                                        break;
+                                    case "云龙五现":
+                                        ((云龙五现)_skills[i]).Cast(_duringBeiShui);
+                                        break;
+                                }
+
+                                _getKeyStateDelay = 10;//公共CD
+
+                                break;
+                            }
+
+                            #endregion 神威
+
+                            #region 烟霞
+
+                            if (_skills[i].Name == "烟霞满天")
+                            {
+                                foreach (var skill in _skills.Where(sk => sk.Name != "烟霞满天"))
+                                    skill.Reset();//刷新
+
+                                _getKeyStateDelay = 10;//公共CD
+                                break;
+                            }
+
+                            #endregion
+                            
                             _skills[i].Cast();
-                            _getKeyStateDelay = 10;
+
+                            _getKeyStateDelay = 10;//公共CD
                         }
                     }
                 }

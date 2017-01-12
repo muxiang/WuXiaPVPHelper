@@ -10,10 +10,22 @@ namespace WuXiaPVPHelper.Careers.神威
     [Serializable]
     public class 无敌无我 : Skill
     {
+        private const int OriginCooldown = 35;
+
         public 无敌无我()
         {
             Name = "无敌无我";
-            Cooldown = 35;
+            Cooldown = OriginCooldown;
+        }
+
+        public new void Cast(bool duringBeiShui)
+        {
+            if (duringBeiShui)
+                Cooldown = OriginCooldown / 2;
+            else
+                Cooldown = OriginCooldown;
+
+            base.Cast();
         }
     }
 }

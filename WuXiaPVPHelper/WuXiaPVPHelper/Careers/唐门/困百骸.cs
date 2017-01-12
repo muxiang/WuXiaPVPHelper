@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace WuXiaPVPHelper
+namespace WuXiaPVPHelper.Careers.唐门
 {
     [Serializable]
-    public class Career
+    public class 困百骸 : Skill
     {
-        public string Name { get; set; }
-        
-        public SortedList<int,Skill> Skills { get; set; }
+        public 困百骸()
+        {
+            Name = "困百骸";
+            Cooldown = 18;
+        }
     }
 }

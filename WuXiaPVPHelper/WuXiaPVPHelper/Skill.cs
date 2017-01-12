@@ -17,6 +17,7 @@ namespace WuXiaPVPHelper
     public abstract class Skill
     {
         //计时秒表
+        [NonSerialized]
         protected Stopwatch Sw;
 
         private string _name;

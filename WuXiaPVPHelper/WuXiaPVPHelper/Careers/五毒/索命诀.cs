@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace WuXiaPVPHelper
+namespace WuXiaPVPHelper.Careers.五毒
 {
     [Serializable]
-    public class Career
+    public class 索命诀 : Skill
     {
-        public string Name { get; set; }
-        
-        public SortedList<int,Skill> Skills { get; set; }
+        public 索命诀()
+        {
+            Name = "索命诀";
+            Cooldown = 25;
+        }
     }
 }

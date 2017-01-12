@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace WuXiaPVPHelper
+namespace WuXiaPVPHelper.Careers.真武
 {
     [Serializable]
-    [XmlType(AnonymousType = true)]
-    [XmlRoot(Namespace = "", IsNullable = false, ElementName = "Careers")]
-    public class CareerCollection:List<Career>
+    public class 冲盈 : Skill
     {
+        public 冲盈()
+        {
+            Name = "冲盈";
+            Cooldown = 20;
+        }
     }
 }
