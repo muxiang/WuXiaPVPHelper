@@ -28,6 +28,8 @@ namespace WuXiaPVPHelper
         private List<Career> _careers;
         private ImageList _imageList;
 
+        private string _selectedCareerName = String.Empty;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -234,7 +236,7 @@ namespace WuXiaPVPHelper
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (cmbCareers.SelectedIndex < 0)
+            if (_selectedCareerName == string.Empty)
             {
                 MessageBox.Show(@"请先选择对战职业！", @"错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

@@ -29,38 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.cmbCareers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tbIcons = new System.Windows.Forms.TrackBar();
+            this.picShenDao = new System.Windows.Forms.PictureBox();
+            this.picWuDu = new System.Windows.Forms.PictureBox();
+            this.picTangMen = new System.Windows.Forms.PictureBox();
+            this.picGaiBang = new System.Windows.Forms.PictureBox();
+            this.picZhenWu = new System.Windows.Forms.PictureBox();
+            this.picShenWei = new System.Windows.Forms.PictureBox();
             this.picTianXiang = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.cmbCareers = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbIcons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShenDao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWuDu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTangMen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGaiBang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picZhenWu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShenWei)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTianXiang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cmbCareers
-            // 
-            this.cmbCareers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCareers.FormattingEnabled = true;
-            this.cmbCareers.Location = new System.Drawing.Point(303, 79);
-            this.cmbCareers.Name = "cmbCareers";
-            this.cmbCareers.Size = new System.Drawing.Size(121, 20);
-            this.cmbCareers.TabIndex = 1;
-            this.cmbCareers.SelectedIndexChanged += new System.EventHandler(this.cmbCareers_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -117,73 +107,98 @@
             this.tbIcons.TickFrequency = 20;
             this.tbIcons.Value = 60;
             // 
+            // picShenDao
+            // 
+            this.picShenDao.Image = global::WuXiaPVPHelper.Properties.Resources.神刀;
+            this.picShenDao.Location = new System.Drawing.Point(357, 13);
+            this.picShenDao.Name = "picShenDao";
+            this.picShenDao.Size = new System.Drawing.Size(38, 38);
+            this.picShenDao.TabIndex = 6;
+            this.picShenDao.TabStop = false;
+            this.picShenDao.Tag = "神刀";
+            // 
+            // picWuDu
+            // 
+            this.picWuDu.Image = global::WuXiaPVPHelper.Properties.Resources.五毒;
+            this.picWuDu.Location = new System.Drawing.Point(313, 13);
+            this.picWuDu.Name = "picWuDu";
+            this.picWuDu.Size = new System.Drawing.Size(38, 38);
+            this.picWuDu.TabIndex = 6;
+            this.picWuDu.TabStop = false;
+            this.picWuDu.Tag = "五毒";
+            // 
+            // picTangMen
+            // 
+            this.picTangMen.Image = global::WuXiaPVPHelper.Properties.Resources.唐门;
+            this.picTangMen.Location = new System.Drawing.Point(269, 13);
+            this.picTangMen.Name = "picTangMen";
+            this.picTangMen.Size = new System.Drawing.Size(38, 38);
+            this.picTangMen.TabIndex = 6;
+            this.picTangMen.TabStop = false;
+            this.picTangMen.Tag = "唐门";
+            // 
+            // picGaiBang
+            // 
+            this.picGaiBang.Image = global::WuXiaPVPHelper.Properties.Resources.丐帮;
+            this.picGaiBang.Location = new System.Drawing.Point(225, 13);
+            this.picGaiBang.Name = "picGaiBang";
+            this.picGaiBang.Size = new System.Drawing.Size(38, 38);
+            this.picGaiBang.TabIndex = 6;
+            this.picGaiBang.TabStop = false;
+            this.picGaiBang.Tag = "丐帮";
+            // 
+            // picZhenWu
+            // 
+            this.picZhenWu.Image = global::WuXiaPVPHelper.Properties.Resources.真武;
+            this.picZhenWu.Location = new System.Drawing.Point(181, 13);
+            this.picZhenWu.Name = "picZhenWu";
+            this.picZhenWu.Size = new System.Drawing.Size(38, 38);
+            this.picZhenWu.TabIndex = 6;
+            this.picZhenWu.TabStop = false;
+            this.picZhenWu.Tag = "真武";
+            // 
+            // picShenWei
+            // 
+            this.picShenWei.Image = global::WuXiaPVPHelper.Properties.Resources.神威;
+            this.picShenWei.Location = new System.Drawing.Point(137, 13);
+            this.picShenWei.Name = "picShenWei";
+            this.picShenWei.Size = new System.Drawing.Size(38, 38);
+            this.picShenWei.TabIndex = 6;
+            this.picShenWei.TabStop = false;
+            this.picShenWei.Tag = "神威";
+            // 
             // picTianXiang
             // 
-            this.picTianXiang.Location = new System.Drawing.Point(100, 13);
+            this.picTianXiang.Image = global::WuXiaPVPHelper.Properties.Resources.天香;
+            this.picTianXiang.Location = new System.Drawing.Point(93, 13);
             this.picTianXiang.Name = "picTianXiang";
             this.picTianXiang.Size = new System.Drawing.Size(38, 38);
             this.picTianXiang.TabIndex = 6;
             this.picTianXiang.TabStop = false;
+            this.picTianXiang.Tag = "天香";
             // 
-            // pictureBox2
+            // cmbCareers
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(144, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(188, 13);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(232, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Location = new System.Drawing.Point(276, 13);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox5.TabIndex = 6;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Location = new System.Drawing.Point(320, 13);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox6.TabIndex = 6;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Location = new System.Drawing.Point(364, 13);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
+            this.cmbCareers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCareers.FormattingEnabled = true;
+            this.cmbCareers.Location = new System.Drawing.Point(303, 79);
+            this.cmbCareers.Name = "cmbCareers";
+            this.cmbCareers.Size = new System.Drawing.Size(121, 20);
+            this.cmbCareers.TabIndex = 1;
+            this.cmbCareers.Visible = false;
+            this.cmbCareers.SelectedIndexChanged += new System.EventHandler(this.cmbCareers_SelectedIndexChanged);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 377);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.ClientSize = new System.Drawing.Size(411, 377);
+            this.Controls.Add(this.picShenDao);
+            this.Controls.Add(this.picWuDu);
+            this.Controls.Add(this.picTangMen);
+            this.Controls.Add(this.picGaiBang);
+            this.Controls.Add(this.picZhenWu);
+            this.Controls.Add(this.picShenWei);
             this.Controls.Add(this.picTianXiang);
             this.Controls.Add(this.tbIcons);
             this.Controls.Add(this.btnStart);
@@ -201,32 +216,32 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbIcons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShenDao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWuDu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTangMen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGaiBang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picZhenWu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShenWei)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTianXiang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox cmbCareers;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TrackBar tbIcons;
         private System.Windows.Forms.PictureBox picTianXiang;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox picShenWei;
+        private System.Windows.Forms.PictureBox picZhenWu;
+        private System.Windows.Forms.PictureBox picGaiBang;
+        private System.Windows.Forms.PictureBox picTangMen;
+        private System.Windows.Forms.PictureBox picWuDu;
+        private System.Windows.Forms.PictureBox picShenDao;
+        private System.Windows.Forms.ComboBox cmbCareers;
     }
 }
 
