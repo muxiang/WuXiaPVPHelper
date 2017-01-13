@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
+
 using WuXiaPVPHelper.Careers.丐帮;
 using WuXiaPVPHelper.Careers.五毒;
 using WuXiaPVPHelper.Careers.唐门;
@@ -156,6 +151,31 @@ namespace WuXiaPVPHelper
             InitCompleted:
 
             cmbCareers.Items.AddRange(_careers.Select(c => c.Name).ToArray());
+
+            foreach (var pic in Controls.OfType<PictureBox>())
+            {
+                pic.Click += (s1, e1) =>
+                {
+                    PictureBox p = s1 as PictureBox;
+                    SelectCareerPic(p);
+                    
+                    _selectedCareerName = p.Tag.ToString();
+
+                    listView1.Items.Clear();
+
+                    string[] skillNames = _careers.FirstOrDefault(c => c.Name == _selectedCareerName)?.Skills.Values.Select(s => s.Name).ToArray();
+
+                    Debug.Assert(skillNames != null, "skillNames != null");
+                    for (int i = 0; i < skillNames.Length; i++)
+                    {
+                        string sn = skillNames[i];
+                        listView1.Items.Add($"{sn}\nF{i + 1}", sn);
+                    }
+
+                    listView1.Show();
+                };
+            }
+
             listView1.View = View.LargeIcon;
             _imageList = new ImageList();
             _imageList.ImageSize = new Size(40, 40);
@@ -165,6 +185,31 @@ namespace WuXiaPVPHelper
                 _imageList.Images.Add(i.Substring(i.IndexOf("Icons\\", StringComparison.Ordinal) + "Icons\\".Length, i.Length - ".png".Length - "Icons\\".Length), Image.FromFile(i));
 
             listView1.LargeImageList = _imageList;
+        }
+
+        private void SelectCareerPic(PictureBox pic)
+        {
+            if (pic == null) return;
+            pic.Paint += PicPaint;
+            pic.Refresh();
+
+            foreach (var picOther in Controls.OfType<PictureBox>().Where(p => p.Tag.ToString() != pic.Tag.ToString()))
+            {
+                picOther.Paint -= PicPaint;
+                picOther.Refresh();
+            }
+        }
+
+        private void PicPaint(object sender, PaintEventArgs e)
+        {
+            PictureBox p = sender as PictureBox;
+            if (p == null) return;
+            Pen pen = new Pen(Color.Gold, 2f);
+            e.Graphics.DrawLine(pen, new PointF(p.Width / 2f - 1, 0), new PointF(0, p.Height / 2f - 1));
+            e.Graphics.DrawLine(pen, new PointF(p.Width / 2f - 1, 0), new PointF(p.Width, p.Height / 2f - 1));
+            e.Graphics.DrawLine(pen, new PointF(0, p.Height / 2f), new PointF(p.Width / 2f, p.Height));
+            e.Graphics.DrawLine(pen, new PointF(p.Width, p.Height / 2f), new PointF(p.Width / 2f, p.Height));
+
         }
 
         private void cmbCareers_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,6 +226,8 @@ namespace WuXiaPVPHelper
             }
 
             listView1.Show();
+
+            _selectedCareerName = cmbCareers.Text;
         }
 
         private void listView1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
