@@ -35,6 +35,9 @@
   <PropertyGroup>
     <ApplicationIcon>1.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -84,6 +87,7 @@
     <Compile Include="Careers\神刀\啄星辰.cs" />
     <Compile Include="Careers\神刀\饮沧海.cs" />
     <Compile Include="Careers\神威\云龙五现.cs" />
+    <Compile Include="Careers\神威\ShenWeiSkillBase.cs" />
     <Compile Include="Careers\神威\无敌无我.cs" />
     <Compile Include="Careers\神威\猛虎破.cs" />
     <Compile Include="Careers\神威\背水一击.cs" />
@@ -108,6 +112,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPlaying.resx">
       <DependentUpon>FrmPlaying.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +124,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -134,6 +142,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.ico" />
+    <None Include="Icons\醉饮江河.png" />
+    <None Include="Icons\自替身.png" />
+    <None Include="Icons\饮沧海.png" />
+    <None Include="Icons\龙吟三破.png" />
+    <None Include="Icons\蝙蝠掠夜.png" />
     <None Include="CareerIcons\天香.png" />
     <None Include="CareerIcons\神威.png" />
     <None Include="CareerIcons\真武.png" />
@@ -141,17 +154,39 @@
     <None Include="CareerIcons\唐门.png" />
     <None Include="CareerIcons\五毒.png" />
     <None Include="CareerIcons\神刀.png" />
+    <EmbeddedResource Include="AssembliesReferences\ImageProcessing.dll" />
+    <EmbeddedResource Include="AssembliesReferences\Win32.dll" />
+    <EmbeddedResource Include="AssembliesReferences\WindowBase.dll" />
+    <None Include="CareerIcons\太白.png" />
     <Content Include="Icons\云龙五现.png" />
     <Content Include="Icons\伞舞盾.png" />
+    <None Include="Icons\冲盈.png" />
+    <None Include="Icons\倒提壶.png" />
+    <None Include="Icons\动愈守中.png" />
+    <None Include="Icons\凤凰绝杀.png" />
+    <None Include="Icons\回锋斩.png" />
+    <None Include="Icons\困百骸.png" />
+    <None Include="Icons\千机扫.png" />
+    <None Include="Icons\啄星辰.png" />
     <Content Include="Icons\天峰五云剑.png" />
+    <None Include="Icons\寄生诀.png" />
+    <None Include="Icons\微明生灭.png" />
+    <None Include="Icons\形神合.png" />
+    <None Include="Icons\斩血海.png" />
     <Content Include="Icons\无敌无我.png" />
     <Content Include="Icons\无痕剑意.png" />
     <Content Include="Icons\柳暗凌波.png" />
+    <None Include="Icons\柳暗凌波1.png" />
     <Content Include="Icons\烟霞满天.png" />
     <Content Include="Icons\燕回朝阳.png" />
     <Content Include="Icons\猛虎破.png" />
     <Content Include="Icons\玉帘拂衣.png" />
     <Content Include="Icons\琴心三叠.png" />
+    <None Include="Icons\百鬼夜行.png" />
+    <None Include="Icons\离弦腿.png" />
+    <None Include="Icons\离弦腿解控.png" />
+    <None Include="Icons\离渊.png" />
+    <None Include="Icons\索命诀.png" />
     <Content Include="Icons\背水一击.png" />
   </ItemGroup>
   <ItemGroup />

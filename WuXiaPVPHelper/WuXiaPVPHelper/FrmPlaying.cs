@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
+﻿using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 using AlphaWindowBase.Window.WindowBase;
-using WuXiaPVPHelper.Careers.神威;
 
 namespace WuXiaPVPHelper
 {
@@ -21,9 +15,6 @@ namespace WuXiaPVPHelper
         private readonly Skill[] _skills;
 
         private int _getKeyStateDelay = 0;
-
-        //背水中
-        private bool _duringBeiShui = false;
 
         [DllImport("USER32.dll")]
         static extern short GetKeyState(VirtualKeyStates nVirtKey);
@@ -71,29 +62,28 @@ namespace WuXiaPVPHelper
                         {
                             #region 神威
 
-                            if (_skills[i].GetType().Namespace.Contains("神威"))
-                            {
-                                switch (_skills[i].Name)
-                                {
-                                    case "背水一击":
-                                        _duringBeiShui = true;
-                                        _skills[i].Cast();
-                                        break;
-                                    case "猛虎破":
-                                        ((猛虎破)_skills[i]).Cast(_duringBeiShui);
-                                        break;
-                                    case "无敌无我":
-                                        ((无敌无我)_skills[i]).Cast(_duringBeiShui);
-                                        break;
-                                    case "云龙五现":
-                                        ((云龙五现)_skills[i]).Cast(_duringBeiShui);
-                                        break;
-                                }
+                            //if (_skills[i].GetType().Namespace.Contains("神威"))
+                            //{
+                            //    switch (_skills[i].Name)
+                            //    {
+                            //        case "背水一击":
+                            //            _skills[i].Cast();
+                            //            break;
+                            //        case "猛虎破":
+                            //            ((猛虎破)_skills[i]).Cast();
+                            //            break;
+                            //        case "无敌无我":
+                            //            ((无敌无我)_skills[i]).Cast();
+                            //            break;
+                            //        case "云龙五现":
+                            //            ((云龙五现)_skills[i]).Cast();
+                            //            break;
+                            //    }
 
-                                _getKeyStateDelay = 10;//公共CD
+                            //    _getKeyStateDelay = 10;//公共CD
 
-                                break;
-                            }
+                            //    break;
+                            //}
 
                             #endregion 神威
 
@@ -105,6 +95,7 @@ namespace WuXiaPVPHelper
                                     skill.Reset();//刷新
 
                                 _getKeyStateDelay = 10;//公共CD
+                                _skills[i].Cast();
                                 break;
                             }
 

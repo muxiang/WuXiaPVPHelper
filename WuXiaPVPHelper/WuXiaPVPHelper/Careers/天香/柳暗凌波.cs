@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace WuXiaPVPHelper.Careers.天香
 {
@@ -82,11 +77,18 @@ namespace WuXiaPVPHelper.Careers.天香
             }
         }
 
+        public Image Icon1 { get; private set; }
+
         public 柳暗凌波()
         {
             Name = "柳暗凌波";
             Cooldown = 30;
             FirstStageCooldown = 10;
+
+            Image img = (Bitmap)Properties.Resources.ResourceManager.GetObject(Name + 1);
+            if (img == null)
+                throw new ArgumentException();
+            Icon1 = img;
         }
 
         public override void Cast()
@@ -112,7 +114,7 @@ namespace WuXiaPVPHelper.Careers.天香
         {
             if (IsFirstStage)
             {
-                g.DrawImage(Image.FromFile($"Icons\\{Name}1.png"), new RectangleF(new PointF(0, 0), rectSz));
+                g.DrawImage(Icon1, new RectangleF(new PointF(0, 0), rectSz));
 
                 int cdRemains = CooldownRemains;
                 double cdPercent = CooldownPercent;

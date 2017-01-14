@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject1
@@ -17,9 +15,9 @@ namespace UnitTestProject1
 
             using (Graphics g = Graphics.FromImage(bmpOutput))
             {
-                g.DrawImage(bmp, 0, 0, new Rectangle(43, 27, 38, 38), GraphicsUnit.Pixel);
+                g.DrawImage(bmp, 0, 0, new Rectangle(258, 27, 38, 38), GraphicsUnit.Pixel);
             }
-            bmpOutput.Save("D:\\丐帮.png");
+            bmpOutput.Save("D:\\太白.png");
         }
     }
 }

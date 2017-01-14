@@ -41,7 +41,7 @@
             this.picZhenWu = new System.Windows.Forms.PictureBox();
             this.picShenWei = new System.Windows.Forms.PictureBox();
             this.picTianXiang = new System.Windows.Forms.PictureBox();
-            this.cmbCareers = new System.Windows.Forms.ComboBox();
+            this.picTaiBai = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbIcons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShenDao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWuDu)).BeginInit();
@@ -50,13 +50,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picZhenWu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShenWei)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTianXiang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTaiBai)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(13, 16);
+            this.label1.Location = new System.Drawing.Point(13, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 2;
@@ -64,10 +65,10 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(12, 120);
+            this.listView1.Location = new System.Drawing.Point(12, 130);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(386, 245);
+            this.listView1.Size = new System.Drawing.Size(426, 265);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.Visible = false;
@@ -75,9 +76,9 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(222, 76);
+            this.btnStart.Location = new System.Drawing.Point(222, 82);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.Size = new System.Drawing.Size(75, 25);
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "开始";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -87,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(13, 83);
+            this.label2.Location = new System.Drawing.Point(13, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 2;
@@ -97,11 +98,11 @@
             // 
             this.tbIcons.AutoSize = false;
             this.tbIcons.LargeChange = 40;
-            this.tbIcons.Location = new System.Drawing.Point(95, 76);
+            this.tbIcons.Location = new System.Drawing.Point(95, 82);
             this.tbIcons.Maximum = 80;
             this.tbIcons.Minimum = 40;
             this.tbIcons.Name = "tbIcons";
-            this.tbIcons.Size = new System.Drawing.Size(121, 30);
+            this.tbIcons.Size = new System.Drawing.Size(121, 33);
             this.tbIcons.SmallChange = 20;
             this.tbIcons.TabIndex = 5;
             this.tbIcons.TickFrequency = 20;
@@ -110,9 +111,9 @@
             // picShenDao
             // 
             this.picShenDao.Image = global::WuXiaPVPHelper.Properties.Resources.神刀;
-            this.picShenDao.Location = new System.Drawing.Point(357, 13);
+            this.picShenDao.Location = new System.Drawing.Point(401, 14);
             this.picShenDao.Name = "picShenDao";
-            this.picShenDao.Size = new System.Drawing.Size(38, 38);
+            this.picShenDao.Size = new System.Drawing.Size(38, 41);
             this.picShenDao.TabIndex = 6;
             this.picShenDao.TabStop = false;
             this.picShenDao.Tag = "神刀";
@@ -120,9 +121,9 @@
             // picWuDu
             // 
             this.picWuDu.Image = global::WuXiaPVPHelper.Properties.Resources.五毒;
-            this.picWuDu.Location = new System.Drawing.Point(313, 13);
+            this.picWuDu.Location = new System.Drawing.Point(357, 14);
             this.picWuDu.Name = "picWuDu";
-            this.picWuDu.Size = new System.Drawing.Size(38, 38);
+            this.picWuDu.Size = new System.Drawing.Size(38, 41);
             this.picWuDu.TabIndex = 6;
             this.picWuDu.TabStop = false;
             this.picWuDu.Tag = "五毒";
@@ -130,9 +131,9 @@
             // picTangMen
             // 
             this.picTangMen.Image = global::WuXiaPVPHelper.Properties.Resources.唐门;
-            this.picTangMen.Location = new System.Drawing.Point(269, 13);
+            this.picTangMen.Location = new System.Drawing.Point(313, 14);
             this.picTangMen.Name = "picTangMen";
-            this.picTangMen.Size = new System.Drawing.Size(38, 38);
+            this.picTangMen.Size = new System.Drawing.Size(38, 41);
             this.picTangMen.TabIndex = 6;
             this.picTangMen.TabStop = false;
             this.picTangMen.Tag = "唐门";
@@ -140,9 +141,9 @@
             // picGaiBang
             // 
             this.picGaiBang.Image = global::WuXiaPVPHelper.Properties.Resources.丐帮;
-            this.picGaiBang.Location = new System.Drawing.Point(225, 13);
+            this.picGaiBang.Location = new System.Drawing.Point(269, 14);
             this.picGaiBang.Name = "picGaiBang";
-            this.picGaiBang.Size = new System.Drawing.Size(38, 38);
+            this.picGaiBang.Size = new System.Drawing.Size(38, 41);
             this.picGaiBang.TabIndex = 6;
             this.picGaiBang.TabStop = false;
             this.picGaiBang.Tag = "丐帮";
@@ -150,9 +151,9 @@
             // picZhenWu
             // 
             this.picZhenWu.Image = global::WuXiaPVPHelper.Properties.Resources.真武;
-            this.picZhenWu.Location = new System.Drawing.Point(181, 13);
+            this.picZhenWu.Location = new System.Drawing.Point(225, 14);
             this.picZhenWu.Name = "picZhenWu";
-            this.picZhenWu.Size = new System.Drawing.Size(38, 38);
+            this.picZhenWu.Size = new System.Drawing.Size(38, 41);
             this.picZhenWu.TabIndex = 6;
             this.picZhenWu.TabStop = false;
             this.picZhenWu.Tag = "真武";
@@ -160,9 +161,9 @@
             // picShenWei
             // 
             this.picShenWei.Image = global::WuXiaPVPHelper.Properties.Resources.神威;
-            this.picShenWei.Location = new System.Drawing.Point(137, 13);
+            this.picShenWei.Location = new System.Drawing.Point(181, 14);
             this.picShenWei.Name = "picShenWei";
-            this.picShenWei.Size = new System.Drawing.Size(38, 38);
+            this.picShenWei.Size = new System.Drawing.Size(38, 41);
             this.picShenWei.TabIndex = 6;
             this.picShenWei.TabStop = false;
             this.picShenWei.Tag = "神威";
@@ -170,29 +171,29 @@
             // picTianXiang
             // 
             this.picTianXiang.Image = global::WuXiaPVPHelper.Properties.Resources.天香;
-            this.picTianXiang.Location = new System.Drawing.Point(93, 13);
+            this.picTianXiang.Location = new System.Drawing.Point(93, 14);
             this.picTianXiang.Name = "picTianXiang";
-            this.picTianXiang.Size = new System.Drawing.Size(38, 38);
+            this.picTianXiang.Size = new System.Drawing.Size(38, 41);
             this.picTianXiang.TabIndex = 6;
             this.picTianXiang.TabStop = false;
             this.picTianXiang.Tag = "天香";
             // 
-            // cmbCareers
+            // picTaiBai
             // 
-            this.cmbCareers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCareers.FormattingEnabled = true;
-            this.cmbCareers.Location = new System.Drawing.Point(303, 79);
-            this.cmbCareers.Name = "cmbCareers";
-            this.cmbCareers.Size = new System.Drawing.Size(121, 20);
-            this.cmbCareers.TabIndex = 1;
-            this.cmbCareers.Visible = false;
-            this.cmbCareers.SelectedIndexChanged += new System.EventHandler(this.cmbCareers_SelectedIndexChanged);
+            this.picTaiBai.Image = global::WuXiaPVPHelper.Properties.Resources.太白;
+            this.picTaiBai.Location = new System.Drawing.Point(137, 14);
+            this.picTaiBai.Name = "picTaiBai";
+            this.picTaiBai.Size = new System.Drawing.Size(38, 41);
+            this.picTaiBai.TabIndex = 7;
+            this.picTaiBai.TabStop = false;
+            this.picTaiBai.Tag = "太白";
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 377);
+            this.ClientSize = new System.Drawing.Size(450, 408);
+            this.Controls.Add(this.picTaiBai);
             this.Controls.Add(this.picShenDao);
             this.Controls.Add(this.picWuDu);
             this.Controls.Add(this.picTangMen);
@@ -205,7 +206,6 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbCareers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -223,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picZhenWu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShenWei)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTianXiang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTaiBai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,7 +242,7 @@
         private System.Windows.Forms.PictureBox picTangMen;
         private System.Windows.Forms.PictureBox picWuDu;
         private System.Windows.Forms.PictureBox picShenDao;
-        private System.Windows.Forms.ComboBox cmbCareers;
+        private System.Windows.Forms.PictureBox picTaiBai;
     }
 }
 

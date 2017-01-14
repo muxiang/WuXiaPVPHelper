@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace WuXiaPVPHelper
 {
@@ -31,14 +27,17 @@ namespace WuXiaPVPHelper
             protected set
             {
                 _name = value;
-                Icon = Image.FromFile($"Icons\\{value}.png");
+                Image img = (Bitmap)Properties.Resources.ResourceManager.GetObject(_name);
+                if(img == null)
+                    throw new ArgumentException();
+                Icon = img;
             }
         }
 
         /// <summary>
         /// 技能图标
         /// </summary>
-        protected Image Icon { get; set; }
+        public Image Icon { get; private set; }
 
         /// <summary>
         /// 冷却时间
@@ -82,7 +81,7 @@ namespace WuXiaPVPHelper
         /// </summary>
         public virtual void Reset()
         {
-            Sw.Stop();
+            Sw?.Stop();
             Sw = null;
         }
 

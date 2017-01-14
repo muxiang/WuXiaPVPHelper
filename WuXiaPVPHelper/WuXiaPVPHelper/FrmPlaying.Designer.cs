@@ -47,10 +47,6 @@
             this.pic1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pic1_MouseMove);
             this.pic1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pic1_MouseUp);
             // 
-            // tmrDraw
-            // 
-            this.tmrDraw.Interval = 100;
-            // 
             // FrmPlaying
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -60,6 +56,8 @@
             this.Controls.Add(this.pic1);
             this.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "FrmPlaying";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FrmPlaying";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPlaying_FormClosed);

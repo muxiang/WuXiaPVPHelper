@@ -118,11 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="五毒" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CareerIcons\五毒.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="玉帘拂衣" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\玉帘拂衣.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="神威" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CareerIcons\神威.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="无敌无我" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\无敌无我.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="烟霞满天" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\烟霞满天.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="寄生诀" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\寄生诀.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="倒提壶" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\倒提壶.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="困百骸" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\困百骸.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="天峰五云剑" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\天峰五云剑.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="柳暗凌波1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\柳暗凌波1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="凤凰绝杀" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\凤凰绝杀.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="微明生灭" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\微明生灭.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="丐帮" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CareerIcons\丐帮.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="无痕剑意" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\无痕剑意.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="神刀" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CareerIcons\神刀.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="真武" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\CareerIcons\真武.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,13 +163,88 @@
   <data name="天香" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\CareerIcons\天香.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="丐帮" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CareerIcons\丐帮.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="啄星辰" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\啄星辰.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="燕回朝阳" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\燕回朝阳.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="唐门" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\CareerIcons\唐门.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="神刀" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CareerIcons\神刀.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="千机扫" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\千机扫.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="伞舞盾" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\伞舞盾.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="云龙五现" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\云龙五现.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="索命诀" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\索命诀.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="动愈守中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\动愈守中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="离弦腿" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\离弦腿.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="离弦腿解控" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\离弦腿解控.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="蝙蝠掠夜" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\蝙蝠掠夜.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="柳暗凌波" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\柳暗凌波.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="百鬼夜行" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\百鬼夜行.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="冲盈" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\冲盈.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="神威" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CareerIcons\神威.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="龙吟三破" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\龙吟三破.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="醉饮江河" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\醉饮江河.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="斩血海" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\斩血海.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="背水一击" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\背水一击.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="自替身" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\自替身.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="琴心三叠" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\琴心三叠.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="形神合" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\形神合.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="回锋斩" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\回锋斩.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="离渊" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\离渊.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="五毒" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CareerIcons\五毒.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="饮沧海" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\饮沧海.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="猛虎破" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\猛虎破.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="太白" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CareerIcons\太白.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

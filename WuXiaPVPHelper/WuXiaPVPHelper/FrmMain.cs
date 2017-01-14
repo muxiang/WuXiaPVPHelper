@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
@@ -28,6 +29,29 @@ namespace WuXiaPVPHelper
         public FrmMain()
         {
             InitializeComponent();
+
+            const string manifestResourceNameTemplate = @"WuXiaPVPHelper.AssembliesReferences.{0}.dll";
+            var embeddedAssembliesName = new[] { "WindowBase", "Win32", "ImageProcessing" };
+
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            {
+                var assemblyName = new AssemblyName(args.Name).Name;
+
+                if (embeddedAssembliesName.Contains(assemblyName))
+                {
+                    var dllName = string.Format(manifestResourceNameTemplate, assemblyName);
+
+                    using (var stream = Assembly.GetCallingAssembly().GetManifestResourceStream(dllName))
+                    {
+                        if (stream == null) return null;
+
+                        var assemblyData = new byte[stream.Length];
+                        stream.Read(assemblyData, 0, assemblyData.Length);
+                        return Assembly.Load(assemblyData);
+                    }
+                }
+                return null;
+            };
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -146,19 +170,17 @@ namespace WuXiaPVPHelper
                 };
 
 
-            #endregion
+        #endregion
 
-            InitCompleted:
-
-            cmbCareers.Items.AddRange(_careers.Select(c => c.Name).ToArray());
-
+        InitCompleted:
+            
             foreach (var pic in Controls.OfType<PictureBox>())
             {
                 pic.Click += (s1, e1) =>
                 {
                     PictureBox p = s1 as PictureBox;
                     SelectCareerPic(p);
-                    
+
                     _selectedCareerName = p.Tag.ToString();
 
                     listView1.Items.Clear();
@@ -180,9 +202,16 @@ namespace WuXiaPVPHelper
             _imageList = new ImageList();
             _imageList.ImageSize = new Size(40, 40);
 
-            string[] iconNames = Directory.GetFiles("Icons");
-            foreach (string i in iconNames)
-                _imageList.Images.Add(i.Substring(i.IndexOf("Icons\\", StringComparison.Ordinal) + "Icons\\".Length, i.Length - ".png".Length - "Icons\\".Length), Image.FromFile(i));
+            foreach (var career in _careers)
+            {
+                foreach (var skill in career.Skills)
+                {
+                    _imageList.Images.Add(skill.Value.Name, skill.Value.Icon);
+                }
+            }
+            //string[] iconNames = Directory.GetFiles("Icons");
+            //foreach (string i in iconNames)
+            //    _imageList.Images.Add(i.Substring(i.IndexOf("Icons\\", StringComparison.Ordinal) + "Icons\\".Length, i.Length - ".png".Length - "Icons\\".Length), Image.FromFile(i));
 
             listView1.LargeImageList = _imageList;
         }
@@ -205,29 +234,11 @@ namespace WuXiaPVPHelper
             PictureBox p = sender as PictureBox;
             if (p == null) return;
             Pen pen = new Pen(Color.Gold, 2f);
-            e.Graphics.DrawLine(pen, new PointF(p.Width / 2f - 1, 0), new PointF(0, p.Height / 2f - 1));
-            e.Graphics.DrawLine(pen, new PointF(p.Width / 2f - 1, 0), new PointF(p.Width, p.Height / 2f - 1));
-            e.Graphics.DrawLine(pen, new PointF(0, p.Height / 2f), new PointF(p.Width / 2f, p.Height));
-            e.Graphics.DrawLine(pen, new PointF(p.Width, p.Height / 2f), new PointF(p.Width / 2f, p.Height));
+            e.Graphics.DrawLine(pen, new PointF(p.Width / 2f, -1), new PointF(0, p.Height / 2f - 3));
+            e.Graphics.DrawLine(pen, new PointF(p.Width / 2f - 1, -1), new PointF(p.Width, p.Height / 2f - 1));
+            e.Graphics.DrawLine(pen, new PointF(-1, p.Height / 2f - 3), new PointF(p.Width / 2f, p.Height - 3));
+            e.Graphics.DrawLine(pen, new PointF(p.Width, p.Height / 2f - 3), new PointF(p.Width / 2f, p.Height - 4));
 
-        }
-
-        private void cmbCareers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            listView1.Items.Clear();
-
-            string[] skillNames = _careers.FirstOrDefault(c => c.Name == cmbCareers.SelectedItem.ToString())?.Skills.Values.Select(s => s.Name).ToArray();
-
-            Debug.Assert(skillNames != null, "skillNames != null");
-            for (int i = 0; i < skillNames.Length; i++)
-            {
-                string sn = skillNames[i];
-                listView1.Items.Add($"{sn}\nF{i + 1}", sn);
-            }
-
-            listView1.Show();
-
-            _selectedCareerName = cmbCareers.Text;
         }
 
         private void listView1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -262,7 +273,7 @@ namespace WuXiaPVPHelper
             a.Text = aName + '\n' + bKey;
             b.Text = bName + '\n' + aKey;
 
-            SortedList<int, Skill> skills = _careers.FirstOrDefault(c => c.Name == cmbCareers.SelectedItem.ToString())?.Skills;
+            SortedList<int, Skill> skills = _careers.FirstOrDefault(c => c.Name == _selectedCareerName)?.Skills;
 
             KeyValuePair<int, Skill> sa = skills.FirstOrDefault(s => s.Value.Name == aName);
             KeyValuePair<int, Skill> sb = skills.FirstOrDefault(s => s.Value.Name == bName);
